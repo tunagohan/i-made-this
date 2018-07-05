@@ -1,0 +1,33 @@
+# MySQL. Versions 5.1.10 and up are supported.
+#   gem 'mysql2'
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+
+development:
+  <<: *default
+  database: made_dev
+  username: root
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  host: 127.0.0.1
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
+
+test:
+  <<: *default
+  database: made_test
+  username: root
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  host: 127.0.0.1
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
+
+production:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: <%= ENV['DATABASE_SOCKET'] %>
