@@ -1,6 +1,16 @@
 # i-made-this
 わたしが作ったものを見て！自慢できるSNS
 
+## ブランチ運用方法
+
+| Branch | Rule |
+|:-:|:-:|
+| master | 直接pushしないこと |
+| develop | Heroku運用が始まったら本格稼働 |
+
+今の所 master からブランチ切ってプルリ作ってレビュー後マージする形で
+masterブランチ取り込んだ後 heroku push しなければならんので極力レビュー必須で。
+そのうちCIとか入れます。
 
 ## Versions
 
