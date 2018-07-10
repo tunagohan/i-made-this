@@ -1,0 +1,26 @@
+<%= link_to 'New Item', new_item_path, class: "btn btn-warning" %>
+<div class="container">
+  <h1>私の見て見て</h1>
+  <div class="row">
+    <%# itemリスト部分 %>
+    <div class="card-columns">
+      <% @items.each do |item| %>
+        <div class="card" style="width: 15rem;">
+          <%= image_tag "sample.svg", class: "card-img-top" %>
+          <div class="card-body">
+            <h4 class="card-title"><%= item.title %></h4>
+            <p class="card-text"><%= item.description %></p>
+            <%= link_to '詳細をみる', item, class: "btn btn-primary" %>
+            <button type="button" class="btn btn-circle like-button">
+              <%= fa_icon("heart") %>
+            </button>
+            <button type="button" class="btn btn-circle idea-button">
+              <%= fa_icon("heart") %>
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%# itemリスト終了 %>
+  </div>
+</div>

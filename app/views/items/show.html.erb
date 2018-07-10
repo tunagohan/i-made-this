@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <div>
+        <div>
+          <p><%= @item.title %></p>
+        </div>
+        <div>
+          <p><%= @item.description %></p>
+        </div>
+        <div>
+          <p><%= @item.url %></p>
+        </div>
+        <div>
+          <p><%= @item.image %></p>
+        </div>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
