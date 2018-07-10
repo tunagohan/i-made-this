@@ -20,9 +20,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # --- self add gems --- #
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'          # jquery
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'  # awesome font
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'        # sass bootstrap
 gem 'devise', '~> 4.4', '>= 4.4.3'                # user auth
 gem 'acts-as-taggable-on', '~> 6.0'               # add tags
+gem 'annotate', '~> 2.7', '>= 2.7.4'              # schema writing
+gem 'bootstrap', '~> 4.1.1'                       # bootstrap4
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
