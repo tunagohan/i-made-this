@@ -1,1 +1,18 @@
-// import
+// gems style import //
+@import "bootstrap";
+@import "font-awesome";
+
+// 見て見てページ
+@import "items";
+
+// font faces import //
+@font-face{
+  font-family: "fontawesome-webfont";
+  src: font-url('fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "fontawesome-webfont";
+}
