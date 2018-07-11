@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#portfolio">ログイン</a>
+          <%= link_to '新規登録', new_user_registration_path, class: "nav-link js-scroll-trigger" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">新規登録</a>
+          <%= link_to 'ログイン', login_path, class: "nav-link js-scroll-trigger" %>
         </li>
       </ul>
     </div>
@@ -31,30 +31,17 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <p class="text-faded mb-5">自分の作ったものをいろんな人に見てもらいたい！<br>誰かの作ったものを見て見てみたい！</p>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">早速登録してみる？</a>
+        <%= link_to 'さっそく登録して見る？', new_user_registration_path, class: "btn btn-primary btn-xl js-scroll-trigger registration-button" %>
       </div>
     </div>
   </div>
 </header>
 
-<section class="bg-primary" id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading text-white">We've got what you need!</h2>
-        <hr class="light my-4">
-        <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="services">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading">At Your Service</h2>
+        <h2 class="section-heading">いろんなものを自慢しましょう</h2>
         <hr class="my-4">
       </div>
     </div>
@@ -63,30 +50,30 @@
     <div class="row">
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box mt-5 mx-auto">
-          <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-          <h3 class="mb-3">Sturdy Templates</h3>
-          <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+          <i class="fa fa-4x fa-camera text-primary mb-3 sr-icons"></i>
+          <h3 class="mb-3">写真家</h3>
+          <p class="text-muted mb-0">お気に入りの写真を自慢しよう</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box mt-5 mx-auto">
-          <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-          <h3 class="mb-3">Ready to Ship</h3>
-          <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+          <i class="fa fa-4x fa-desktop text-primary mb-3 sr-icons"></i>
+          <h3 class="mb-3">エンジニアリング</h3>
+          <p class="text-muted mb-0">Webサイトを自慢しよう</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box mt-5 mx-auto">
-          <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-          <h3 class="mb-3">Up to Date</h3>
-          <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+          <i class="fa fa-4x fa-music text-primary mb-3 sr-icons"></i>
+          <h3 class="mb-3">音楽家</h3>
+          <p class="text-muted mb-0">オリジナル楽曲を自慢しよう</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box mt-5 mx-auto">
-          <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-          <h3 class="mb-3">Made with Love</h3>
-          <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+          <i class="fa fa-4x fa-youtube text-primary mb-3 sr-icons"></i>
+          <h3 class="mb-3">映像クリエイター</h3>
+          <p class="text-muted mb-0">自作した映像を自慢しよう</p>
         </div>
       </div>
     </div>
