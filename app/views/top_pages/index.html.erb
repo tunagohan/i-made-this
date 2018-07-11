@@ -3,10 +3,10 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">i made this</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="nav-content">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <%= link_to '新規登録', new_user_registration_path, class: "nav-link js-scroll-trigger" %>
