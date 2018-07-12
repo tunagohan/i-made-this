@@ -69,6 +69,7 @@ $ bundle install --path vendor/bundle
 以下を direnv とか .env でいい感じに export してあげてください
 
 ```
+export MYSQL_USERNAME=
 export MYSQL_ROOT_PASSWORD=
 export WEB_PORT=
 ```
