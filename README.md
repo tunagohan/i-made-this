@@ -36,6 +36,12 @@ masterブランチ取り込んだ後 heroku push しなければならんので�
 
 ## ローカル環境の立て方(初回)
 
+### imagemagic
+
+```
+$ brew install imagemagick
+```
+
 ### ruby のバージョンを確認する
 
 合っていれば次へ
