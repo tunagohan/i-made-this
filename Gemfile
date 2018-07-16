@@ -24,6 +24,9 @@ gem 'devise', '~> 4.4', '>= 4.4.3'                # user auth
 gem 'acts-as-taggable-on', '~> 6.0'               # add tags
 gem 'annotate', '~> 2.7', '>= 2.7.4'              # schema writing
 gem 'bootstrap', '~> 4.1.1'                       # bootstrap4
+gem 'mini_magick', '~> 4.8'                       # image resizing
+gem 'fog-aws', '~> 3.0'                           # aws
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'           # uploader
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

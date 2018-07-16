@@ -79,6 +79,7 @@ class ItemsController < ApplicationController
                   :user_id,
                   :description,
                   :image,
+                  :image_cache,
                   :url
           )
     end

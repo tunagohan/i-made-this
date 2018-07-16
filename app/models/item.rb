@@ -31,4 +31,7 @@ class Item < ApplicationRecord
 
   # Itemモデル
   validates  :category_id, presence: true
+
+  # Item Image
+  mount_uploader :image, ImageUploader
 end
