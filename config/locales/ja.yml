@@ -5,3 +5,9 @@ ja:
     url: "ＵＲＬ"
     image: "画像"
     category: "カテゴリ"
+    category_name:
+      engineer: "エンジニア"
+      cooking: "料理"
+      diy: "自作大工"
+      phote: "写真"
+      etc: "その他"

@@ -16,8 +16,21 @@
     <% end %>
 
     <%# 実フォーム部分 %>
-    <!-- タイトル -->
+    <!-- Category -->
+    <div class="form-group row">
+      <%= form.label t('items.category'), class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.collection_select :category_id,
+              Category.all,
+              :category_id,
+              :translated_name,
+              { prompt: "カテゴリー選択" },
+              { class: "form-control" }
+        -%>
+      </div>
+    </div>
 
+    <!-- タイトル -->
     <div class="form-group row">
       <%= form.label t('items.title'), class: "col-sm-2 col-form-label" %>
       <div class="col-sm-10">
@@ -60,20 +73,6 @@
               placeholder: 'Choose a file...'
         %>
         <%= form.hidden_field :image_cache %>
-      </div>
-    </div>
-
-    <!-- Category -->
-    <div class="form-group row">
-      <%= form.label t('items.category'), class: "col-sm-2 col-form-label" %>
-      <div class="col-sm-10">
-        <%= form.collection_select :category_id,
-              Category.all,
-              :category_id,
-              :category_name,
-              { prompt: true },
-              { class: "form-control" }
-        %>
       </div>
     </div>
 

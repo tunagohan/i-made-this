@@ -19,4 +19,8 @@ class Category < ApplicationRecord
   belongs_to :category, optional: true
   validates  :category_id,   uniqueness: true
   validates  :category_name, uniqueness: true
+
+  def translated_name
+    I18n.t(category_name, :scope => 'items.category_name')
+  end
 end
