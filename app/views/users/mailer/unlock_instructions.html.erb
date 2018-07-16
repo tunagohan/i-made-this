@@ -1,7 +1,12 @@
-<p>Hello <%= @resource.email %>!</p>
+<h2>アカウント凍結解除</h2>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p><%= @resource.email %> さん</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>過剰なログイン試行回数が原因でアカウントがロックされています。</p>
+<p>下記のリンクをクリックしてアカウントのロックを解除してください。</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to '認証する', unlock_url(@resource, unlock_token: @token), class: "btn-primary registration-button" %></p>
+
+<p>※ このメールはSendGridを利用して送信しています。</p>
+<p>※ リクエストしていない場合は、このメールを無視してください。</p>
+<p>i-made-this事務局</p>

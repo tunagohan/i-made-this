@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+    .navbar {
+      border-color: #f05e40;
+      background-color: #f05e40;
+      border-bottom: 1px solid;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+    }
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .navbar-brand {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .content-body {
+      background-color: #FFF;
+      padding-top: 5rem;
+    }
+    .registration-button {
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s;
+    }
+    .registration-button:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-primary {
+      background-color: #f05f40;
+      border-color: #f05f40;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 300px;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <p class="navbar-brand">i made this</p>
+      </div>
+    </nav>
+    <div class="content-body">
+      <%= yield %>
+    </div>
+  </body>
+</html>

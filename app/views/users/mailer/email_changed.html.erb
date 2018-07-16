@@ -1,7 +1,13 @@
-<p>Hello <%= @email %>!</p>
+<h2>メールアドレスの変更</h2>
+
+<p><%= @email %> さん</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+  <p><%= @resource.unconfirmed_email %>メールアドレスが変更されようとしています</p>
 <% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+  <p><%= @resource.email %> へメールアドレスを変更しました。</p>
 <% end %>
+
+<p>※ このメールはSendGridを利用して送信しています。</p>
+<p>※ リクエストしていない場合は、このメールを無視してください。</p>
+<p>i-made-this事務局</p>

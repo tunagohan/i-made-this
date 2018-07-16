@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %> さん</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>この度はご登録いただきありがとうございます。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>以下のリンクをクリックする事で認証が完了します。</p>
+
+<p><%= link_to '認証する', confirmation_url(@resource, confirmation_token: @token), class: "btn-primary registration-button" %></p>
+
+<p>※ このメールはSendGridを利用して送信しています。</p>
+<p>※ リクエストしていない場合は、このメールを無視してください。</p>
+<p>i-made-this事務局</p>
