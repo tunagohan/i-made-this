@@ -5,7 +5,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   process convert: 'png'
 
   if Rails.env.development?
-    if ENV['FOG_SECRET_ACCESS_KEY'].nil?
+    # ENVで扱うものは文字列として扱われるため文字列比較をする必要があった
+    if ENV['FOG_USE'] === 'false'
       storage :file
     else
       storage :fog

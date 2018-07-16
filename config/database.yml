@@ -9,7 +9,7 @@ development:
   <<: *default
   database: made_dev
   username: <%= ENV['MYSQL_USERNAME'] %>
-  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   host: 127.0.0.1
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   socket: /tmp/mysql.sock
@@ -18,7 +18,7 @@ test:
   <<: *default
   database: made_test
   username: <%= ENV['MYSQL_USERNAME'] %>
-  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   host: 127.0.0.1
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   socket: /tmp/mysql.sock
