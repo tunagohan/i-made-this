@@ -31,6 +31,7 @@ class Item < ApplicationRecord
 
   # Itemモデル
   validates  :category_id, presence: true
+  validates  :url, format: /\A#{URI::regexp(%w(http https))}\z/
 
   # Item Image
   mount_uploader :image, ImageUploader
