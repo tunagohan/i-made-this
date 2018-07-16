@@ -293,4 +293,7 @@ $RECYCLE.BIN/
 .env
 .envrc
 
+# 画像用
+public/uploads
+
 # End of https://www.gitignore.io/api/git,ruby,rails,macos,windows,firebase,rubymine,intellij
