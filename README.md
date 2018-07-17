@@ -1,16 +1,29 @@
 # i-made-this
 わたしが作ったものを見て！自慢できるSNS
 
+## 基本コミュニケーション
+
+- Slack
+  - チャット
+- Discord,ハングアウト
+  - 通話
+- trello
+  - 開発管理
+- figma
+  - デザイン
+
 ## ブランチ運用方法
 
 | Branch | Rule |
 |:-:|:-:|
 | master | 直接pushしないこと |
-| develop | Heroku運用が始まったら本格稼働 |
+| develop | 開発ブランチ |
+| feat-{作業名} | 作業ブランチ |
 
-今の所 master からブランチ切ってプルリ作ってレビュー後マージする形で
-masterブランチ取り込んだ後 heroku push しなければならんので極力レビュー必須で。
-そのうちCIとか入れます。
+developブランチから作業名のブランチを切ってdevelopへマージしてください、
+必ずレビューが必要です。
+
+※ 例えばtopのスタイル修正なら `feat-fix-top_page-style` のように切る
 
 ## Versions
 
@@ -72,12 +85,34 @@ $ bundle install --path vendor/bundle
 
 ### env設定
 
-以下を direnv とか .env でいい感じに export してあげてください
+以下を `direnv` とか `.env` でいい感じに `export` してあげてください
+
+.env.exampleがサンプルファイルとなる為 `cp .env.example .env` とかでも
 
 ```
+
+# 必須項目 基本設定
+
+## mysqlユーザー名
 export MYSQL_USERNAME=
-export MYSQL_ROOT_PASSWORD=
-export WEB_PORT=
+
+## mysqlパスワード
+export MYSQL_PASSWORD=
+
+## webのポート番号(http://localhost:2000)
+export WEB_PORT=2000
+
+## ファイルアップにAWSを利用するか(true/false)
+export FOG_USE=false
+
+# AWS settings
+export FOG_PROVIDER=
+export FOG_ACCESS_KEY=
+export FOG_SECRET_ACCESS_KEY=
+export FOG_REGION=
+export FOG_S3_BUCKET_NAME=
+export FOG_S3_URL=https://s3....
+
 ```
 
 ### db設定
