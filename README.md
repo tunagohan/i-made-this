@@ -90,7 +90,6 @@ $ bundle install --path vendor/bundle
 .env.exampleがサンプルファイルとなる為 `cp .env.example .env` とかでも
 
 ```
-
 # 必須項目 基本設定
 
 ## mysqlユーザー名
@@ -98,6 +97,9 @@ export MYSQL_USERNAME=
 
 ## mysqlパスワード
 export MYSQL_PASSWORD=
+
+## mysqlのホスト(127.0.0.1 や localhost)
+export MYSQL_HOST=
 
 ## webのポート番号(http://localhost:2000)
 export WEB_PORT=2000
@@ -112,7 +114,6 @@ export FOG_SECRET_ACCESS_KEY=
 export FOG_REGION=
 export FOG_S3_BUCKET_NAME=
 export FOG_S3_URL=https://s3....
-
 ```
 
 ### db設定
