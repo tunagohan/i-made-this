@@ -35,4 +35,5 @@ class Item < ApplicationRecord
 
   # Item Image
   mount_uploader :image, ImageUploader
+
 end

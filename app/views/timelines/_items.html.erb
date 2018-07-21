@@ -1,0 +1,20 @@
+<% @items.each do |item| %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">タイトル</th>
+        <th scope="col">詳細</th>
+        <th scope="col">画像</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= image_tag item.image.url unless item.image.url.nil? %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
