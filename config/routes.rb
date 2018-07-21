@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   resources :items
 
   # 全ユーザーの見てみてが見れるタイムライン
-
   get 'timeline', to: "timelines#index"
-
-  get 'api/v1/timelines', to: "api/timelines#item"
 
   devise_for :users, controllers: {
    registrations: 'users/registrations',
