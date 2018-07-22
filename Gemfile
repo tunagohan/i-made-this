@@ -27,6 +27,8 @@ gem 'bootstrap', '~> 4.1.1'                       # bootstrap4
 gem 'mini_magick', '~> 4.8'                       # image resizing
 gem 'fog-aws', '~> 3.0'                           # aws
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'           # uploader
+gem 'kaminari', '~> 1.1', '>= 1.1.1'              # pagenation
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'       # jquery ui
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

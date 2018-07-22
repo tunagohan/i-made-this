@@ -6,6 +6,10 @@ class TimelinesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
+    @items = Item.where(delete_flag: false).order("created_at DESC").page(params[:page]).per(1)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end
