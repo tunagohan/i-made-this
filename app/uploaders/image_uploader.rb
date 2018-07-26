@@ -4,7 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fill: [200, 200]
   process convert: 'png'
 
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.test?
     # ENVで扱うものは文字列として扱われるため文字列比較をする必要があった
     if ENV['FOG_USE'] === 'false'
       storage :file

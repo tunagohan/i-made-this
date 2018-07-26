@@ -34,7 +34,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails', '~> 2.5'                    # read env
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'         # testing
-  gem 'factory_bot', '~> 4.10'                    # test data
+  gem 'factory_bot_rails', '~> 4.10'              # test data
   gem 'faker', '~> 1.8', '>= 1.8.7'               # random data generate
   gem 'database_cleaner', '~> 1.7'                # reset test_database
   gem 'letter_opener_web', '~> 1.3', '>= 1.3.4'   # web mail
