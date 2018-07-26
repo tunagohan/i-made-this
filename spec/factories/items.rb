@@ -9,7 +9,7 @@ FactoryBot.define do
     category_id   1
     user_id       1
     url           Faker::Internet.url
-    image         Faker::Avatar.image
+    image         Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/factories/image/test_image.png'))
     delete_flags  0
   end
 end

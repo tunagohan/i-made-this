@@ -65,7 +65,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   # deviseのテストヘルパーをロードする
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers
 
   # 作成したログインモジュールを追加する
   config.include ControllerMacros, type: :controller
