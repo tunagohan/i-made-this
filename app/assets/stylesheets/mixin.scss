@@ -1,0 +1,37 @@
+/* 長文を三点リーダーにする */
+@mixin line-truncate(){
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* フォントサイズ */
+@mixin font-rem($font-size, $line-height:0, $letter-spacing:0, $is_center:false){
+  font-size: $font-size / $font-size-root * 1rem;
+  @if($line-height!=0){
+    line-height: ($line-height / $font-size);
+  }
+  @if($letter-spacing!=0){
+    letter-spacing: ($letter-spacing / $font-size) * 1em;
+    @if($is_center==true){
+      text-indent: ($letter-spacing / $font-size) * 1em;
+    }
+  }
+}
+
+/* ブレークポイント */
+@mixin bp($bp-size) {
+  $small: "(max-width: 767px)"; // smartphome
+  $medium: "(max-width: 1023px) and (min-width: 768px)"; // tablet
+  $large: "(min-width: 1024px)"; // laptop
+
+  @if $point == sm {
+    @media #{$small} { @content; }
+  }
+  @else if $point == tb {
+    @media #{$medium} { @content; }
+  }
+  @else if $point == lp {
+    @media #{$large} { @content; }
+  }
+}
