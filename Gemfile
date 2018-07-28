@@ -29,6 +29,8 @@ gem 'fog-aws', '~> 3.0'                           # aws
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'           # uploader
 gem 'kaminari', '~> 1.1', '>= 1.1.1'              # pagenation
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'       # jquery ui
+gem 'omniauth-twitter', '~> 1.4'                  # auth twitter
+gem 'omniauth', '~> 1.8', '>= 1.8.1'              # omniauth
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
