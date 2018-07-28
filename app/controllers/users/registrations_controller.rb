@@ -39,7 +39,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #
   # 新規登録時以下のパラメータが必須項目となる
   #
-  # username:               ユーザー名
   # email:                  メールアドレス
   # password:               パスワード
   # password_confirmation:  パスワード確認
@@ -47,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #
   def sign_up_require_params
     devise_parameter_sanitizer.permit(:sign_up) do | user |
-      user.permit(:username, :email, :password, :password_confirmation, :remember_me)
+      user.permit(:email, :password, :password_confirmation, :remember_me)
     end
   end
 
