@@ -16,7 +16,6 @@
 #  last_sign_in_ip        :string(255)
 #  location               :string(255)
 #  name                   :string(255)
-#  nickname               :string(255)
 #  provider               :string(255)      not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -26,6 +25,7 @@
 #  unconfirmed_email      :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  twitter_id             :string(255)
 #
 # Indexes
 #
@@ -38,7 +38,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable,         # パスワード暗号化
          :registerable,                     # 登録処理
-         :confirmable,                      # メール認証
+         # :confirmable,                      # メール認証
          :recoverable,                      # パスワードリセット
          :rememberable,                     # User Cookie
          :trackable,                        # User IPなど
@@ -49,15 +49,15 @@ class User < ApplicationRecord
   class << self
     def from_omniauth(auth)
       find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
-        user.provider = auth["provider"]
-        user.uid      = auth["uid"]
-        user.nickname = auth["info"]["nickname"]
-        user.name     = auth["info"]["name"]
-        user.location = auth["info"]["location"]
-        user.location = auth["info"]["image"]
-        user.location = auth["info"]["description"]
-        user.email    = dummy_email(auth)
-        user.password = Devise.friendly_token[0, 20]
+        user.provider               = auth["provider"]
+        user.uid                    = auth["uid"]
+        user.twitter_id             = auth["info"]["nickname"]
+        user.name                   = auth["info"]["name"]
+        user.location               = auth["info"]["location"]
+        user.image                  = auth["info"]["image"]
+        user.description            = auth["info"]["description"]
+        user.email                  = dummy_email(auth)
+        user.password               = Devise.friendly_token[0, 20]
       end
     end
 

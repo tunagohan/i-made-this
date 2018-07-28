@@ -15,14 +15,14 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
-    # ログイン
-    get "login", to: "users/sessions#new"
-    post "login", to: "users/sessions#create"
+    # # ログイン
+    # get "login", to: "users/sessions#new"
+    # post "login", to: "users/sessions#create"
     # ログアウト
     get "logout", to: "users/sessions#destroy"
-    # 登録
-    get "sign_up", to: "users/sessions#new"
-    post "sign_up", to: "users/sessions#create"
+    # # 登録
+    # get "sign_up", to: "users/sessions#new"
+    # post "sign_up", to: "users/sessions#create"
 
     get "/auth/twitter/callback", to: "users/sessions#create"
   end

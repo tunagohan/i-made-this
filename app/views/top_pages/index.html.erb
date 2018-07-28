@@ -9,7 +9,9 @@
     <div class="collapse navbar-collapse" id="nav-content">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "nav-link js-scroll-trigger" %>
+          <%= link_to user_twitter_omniauth_authorize_path, class: "nav-link js-scroll-trigger" do %>
+            <i class="fa fa-twitter fa-1x"></i> Twitterでログイン
+          <% end %>
         </li>
       </ul>
     </div>
@@ -28,7 +30,9 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <p class="text-faded mb-5">自分の作ったものをいろんな人に見てもらいたい！<br>誰かの作ったものを見て見てみたい！</p>
-        <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-xl js-scroll-trigger registration-button" %>
+        <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-xl js-scroll-trigger registration-button" do %>
+          <i class="fa fa-twitter fa-1x"></i> Twitterでログイン
+        <% end %>
       </div>
     </div>
   </div>

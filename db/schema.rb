@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_07_28_095138) do
     t.string "uid", null: false
     t.string "provider", null: false
     t.string "name"
-    t.string "nickname"
+    t.string "twitter_id"
     t.string "location"
     t.string "image"
     t.string "description"
