@@ -8,6 +8,7 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string(255)
+#  description            :string(255)
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
 #  image                  :string(255)
@@ -45,33 +46,35 @@ class User < ApplicationRecord
          :omniauthable,                     # sns auth
          omniauth_providers: [:twitter]     # twitter login
 
-  validates :email,     uniqueness: true
-
-  belongs_to :user, optional: true
-
   class << self
-    def find_for_oauth(auth)
-      user = User.where(uid: auth.uid, provider: auth.provider).first
-
-      unless user
-        user = User.create(
-          uid:      auth.uid,
-          provider: auth.provider,
-          email:    User.dummy_email(auth),
-          password: Devise.friendly_token[0, 20],
-          name:     auth.name,
-          nickname: auth.nickname,
-          location: auth.location,
-          image:    auth.image
-        )
+    def from_omniauth(auth)
+      find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
+        user.provider = auth["provider"]
+        user.uid      = auth["uid"]
+        user.nickname = auth["info"]["nickname"]
+        user.name     = auth["info"]["name"]
+        user.location = auth["info"]["location"]
+        user.location = auth["info"]["image"]
+        user.location = auth["info"]["description"]
+        user.email    = dummy_email(auth)
+        user.password = Devise.friendly_token[0, 20]
       end
-
-      user
     end
-  end
-  private
 
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
+    def new_with_session(params, session)
+      if session["devise.user_attributes"]
+        new(session["devise.user_attributes"]) do |user|
+          user.attributes = params
+        end
+      else
+        super
+      end
+    end
+
+    private
+
+    def dummy_email(auth)
+      "#{auth.uid}-#{auth.provider}@example.com"
+    end
   end
 end

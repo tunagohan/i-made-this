@@ -9,10 +9,7 @@
     <div class="collapse navbar-collapse" id="nav-content">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to '新規登録', new_user_registration_path, class: "nav-link js-scroll-trigger" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ログイン', login_path, class: "nav-link js-scroll-trigger" %>
+          <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "nav-link js-scroll-trigger" %>
         </li>
       </ul>
     </div>
@@ -31,7 +28,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <p class="text-faded mb-5">自分の作ったものをいろんな人に見てもらいたい！<br>誰かの作ったものを見て見てみたい！</p>
-        <%= link_to 'さっそく登録して見る？', new_user_registration_path, class: "btn btn-primary btn-xl js-scroll-trigger registration-button" %>
+        <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-xl js-scroll-trigger registration-button" %>
       </div>
     </div>
   </div>
