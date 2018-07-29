@@ -10,18 +10,21 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
    registrations: 'users/registrations',
-   sessions: 'users/sessions'
+   sessions: 'users/sessions',
+   omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   devise_scope :user do
-    # ログイン
-    get "login", to: "users/sessions#new"
-    post "login", to: "users/sessions#create"
+    # # ログイン
+    # get "login", to: "users/sessions#new"
+    # post "login", to: "users/sessions#create"
     # ログアウト
     get "logout", to: "users/sessions#destroy"
-    # 登録
-    get "sign_up", to: "users/sessions#new"
-    post "sign_up", to: "users/sessions#create"
+    # # 登録
+    # get "sign_up", to: "users/sessions#new"
+    # post "sign_up", to: "users/sessions#create"
+
+    get "/auth/twitter/callback", to: "users/sessions#create"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

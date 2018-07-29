@@ -23,8 +23,6 @@ class Users::SessionsController < Devise::SessionsController
   #
   # ログイン時以下のパラメータが必須項目となる
   #
-  # login:
-  # username:               ユーザー名
   # email:                  メールアドレス
   # password:               パスワード
   # remember_me:            ログイン情報を記憶するか
@@ -33,8 +31,6 @@ class Users::SessionsController < Devise::SessionsController
     devise_parameter_sanitizer
       .permit(:sign_up,
               keys: [
-                :login,
-                :username,
                 :email,
                 :password,
                 :remember_me
