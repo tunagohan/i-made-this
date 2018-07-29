@@ -29,11 +29,25 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   validates :category_id, presence: true
 
-  # Itemモデル
+  # Itemに対するバリデーション
   validates :category_id, presence: true
+  validates :title, presence: true, length: { in: 1..32 }
+  validates :description, presence: true, length: { in: 1..255 }
   validates :url, format: /\A#{URI::regexp(%w(http https))}\z/
 
   # Item Image
   mount_uploader :image, ImageUploader
 
+  class << self
+    def get_item_all
+      Item.all.where(delete_flag: 0)
+    end
+
+    def get_page_item(param_page)
+      Item.where(delete_flag: false)
+          .order("created_at DESC")
+          .page(param_page)
+          .per(20)
+    end
+  end
 end

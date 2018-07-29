@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.where(delete_flag: 0)
+    @items = Item.get_item_all
   end
 
   def show
