@@ -11,15 +11,12 @@ CarrierWave.configure do |config|
       region: ENV['FOG_REGION'],
       path_style: true
     }
-
     config.fog_directory = ENV['FOG_S3_BUCKET_NAME']
     config.asset_host = ENV['FOG_S3_URL']
-
     config.fog_public = false
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
     config.storage = :fog
   end
 end
-
 # 日本語の文字化けを防ぐ
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
