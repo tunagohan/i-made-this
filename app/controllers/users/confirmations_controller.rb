@@ -11,7 +11,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   #   super
   # end
 
-  # GET /resource/confirmation?confirmation_token=abcdef
+  # GET /resource/confirmation?confirmation_token=
   # def show
   #   super
   # end

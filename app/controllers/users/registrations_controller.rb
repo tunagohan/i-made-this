@@ -45,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # remember_me:            ログイン情報を記憶するか
   #
   def sign_up_require_params
-    devise_parameter_sanitizer.permit(:sign_up) do | user |
+    devise_parameter_sanitizer.permit(:sign_up) do |user|
       user.permit(:email, :password, :password_confirmation, :remember_me)
     end
   end
@@ -59,7 +59,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # current_password:       現在のパスワード
   #
   def account_update_require_params
-    devise_parameter_sanitizer.permit(:account_update) do | user |
+    devise_parameter_sanitizer.permit(:account_update) do |user|
       user.permit(:email, :password, :password_confirmation, :current_password)
     end
   end

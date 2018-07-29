@@ -11,7 +11,7 @@ class Users::UnlocksController < Devise::UnlocksController
   #   super
   # end
 
-  # GET /resource/unlock?unlock_token=abcdef
+  # GET /resource/unlock?unlock_token=
   # def show
   #   super
   # end

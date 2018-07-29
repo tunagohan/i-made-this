@@ -23,15 +23,15 @@
 class Item < ApplicationRecord
   # Userモデル
   belongs_to :user, optional: true
-  validates  :user_id, presence: true
+  validates :user_id, presence: true
 
   # Categoryモデル
   belongs_to :category, optional: true
-  validates  :category_id, presence: true
+  validates :category_id, presence: true
 
   # Itemモデル
-  validates  :category_id, presence: true
-  validates  :url, format: /\A#{URI::regexp(%w(http https))}\z/
+  validates :category_id, presence: true
+  validates :url, format: /\A#{URI::regexp(%w(http https))}\z/
 
   # Item Image
   mount_uploader :image, ImageUploader

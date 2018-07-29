@@ -36,28 +36,28 @@
 #
 
 class User < ApplicationRecord
-  devise :database_authenticatable,         # パスワード暗号化
-         :registerable,                     # 登録処理
+  devise :database_authenticatable, # パスワード暗号化
+         :registerable, # 登録処理
          # :confirmable,                      # メール認証
-         :recoverable,                      # パスワードリセット
-         :rememberable,                     # User Cookie
-         :trackable,                        # User IPなど
-         :validatable,                      # バリデーション
-         :omniauthable,                     # sns auth
-         omniauth_providers: [:twitter]     # twitter login
+         :recoverable, # パスワードリセット
+         :rememberable, # User Cookie
+         :trackable, # User IPなど
+         :validatable, # バリデーション
+         :omniauthable, # sns auth
+         omniauth_providers: [:twitter] # twitter login
 
   class << self
     def from_omniauth(auth)
       find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
-        user.provider               = auth["provider"]
-        user.uid                    = auth["uid"]
-        user.twitter_id             = auth["info"]["nickname"]
-        user.name                   = auth["info"]["name"]
-        user.location               = auth["info"]["location"]
-        user.image                  = auth["info"]["image"]
-        user.description            = auth["info"]["description"]
-        user.email                  = dummy_email(auth)
-        user.password               = Devise.friendly_token[0, 20]
+        user.provider = auth["provider"]
+        user.uid = auth["uid"]
+        user.twitter_id = auth["info"]["nickname"]
+        user.name = auth["info"]["name"]
+        user.location = auth["info"]["location"]
+        user.image = auth["info"]["image"]
+        user.description = auth["info"]["description"]
+        user.email = dummy_email(auth)
+        user.password = Devise.friendly_token[0, 20]
       end
     end
 

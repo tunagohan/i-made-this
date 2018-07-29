@@ -7,7 +7,11 @@ class TimelinesController < ApplicationController
 
   def index
     @user = User.find_by(id: current_user.id)
-    @items = Item.where(delete_flag: false).order("created_at DESC").page(params[:page]).per(20)
+    @items = Item
+               .where(delete_flag: false)
+               .order("created_at DESC")
+               .page(params[:page])
+               .per(20)
     respond_to do |format|
       format.html
       format.js
