@@ -7,10 +7,78 @@
 
 .btn-circle {
   border-radius: 50%;
-  height: 64px;
-  width: 64px;
-  border: 2px solid #fff;
+  height: 128px;
+  width: 128px;
+  border: 2px solid #4d4d4d4d;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
+}
+
+.imt-pickup_item {
+  &Header {
+    position: relative;
+  }
+  &_titleText {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+  }
+  &Body {
+    &_content {
+
+    }
+  }
+}
+
+.l-tile {
+  display: flex;
+  justify-content: center;
+}
+
+// .c-list_flex {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .c-list_noDot {
+//   list-style: none;
+// }
+
+
+.imt-iconImage {
+  position: absolute;
+  bottom: 43%;
+  left: 23.3%;
+}
+
+.imt-tileItem_titleText {
+  padding-left: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.day {
+  color: #dddddd;
+  font-size: 12px;
+  padding-left: 30px;
+}
+
+/*=======================
+utility 
+=======================*/
+
+.u-fz-25 {
+  font-size: 25px;
+}
+
+.u-mt-24 {
+  margin-top: 24px;
+}
+
+.l-tile-1col {
+  max-width: 640px;
+  width: 80%;
+  margin: 0 auto;
 }

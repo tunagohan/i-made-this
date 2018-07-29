@@ -1,17 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ブランド</a>
-  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="Navber">
-    <%= image_tag @user.image.to_s, class: 'btn-circle' %>
-  </div><!-- /.navbar-collapse -->
-</nav>
-
 <div class="container">
-  <div id="items">
-    <%= render :partial => "items", locals: { items: @items } %>
+  <div class="l-tile l-tile-1col">
+    <div class="l-tile_item imt-pickup_item">
+      <div class="imt-pickup_itemHeader">
+        <img  class="imt-pickup_itemHeader_image" src="https://picsum.photos/640/320">
+      </div>
+      <div class="imt-pickup_itemBody">
+        <div class="imt-pickup_itemBody_head">
+          <div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle' %></div>
+          <div class="imt-pickup_item imt-tileItem_titleText u-fz-25 u-mt-24">【ドヤ】いい写真撮ったった<span class="day">2018/XX/XX</span></div>
+        </div>
+        <div class="imt-pickup_item_content u-mt-24">
+          <div class="imt-pickup_item_detail">詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細詳細</div>
+          <div class="imt-pickup_item_category">カテゴリ</div>
+          <div class="imt-pickup_item_tag">ハッシュタグ</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <%= paginate @items %>
 </div>
