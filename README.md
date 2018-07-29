@@ -18,12 +18,12 @@
 |:-:|:-:|
 | master | 直接pushしないこと |
 | develop | 開発ブランチ |
-| feat-{作業名} | 作業ブランチ |
+| {作業名} | 作業ブランチ |
 
 developブランチから作業名のブランチを切ってdevelopへマージしてください、
 必ずレビューが必要です。
 
-※ 例えばtopのスタイル修正なら `feat-fix-top_page-style` のように切る
+※ 例えばtopのスタイル修正なら `fix-top_page-style` のように切る
 
 ## Versions
 
@@ -80,6 +80,10 @@ $ mysql --version
 ### bundle Install
 
 ```
+$ ./dev-tools/bundle-install.sh
+
+もしくは
+
 $ bundle install --path vendor/bundle
 ```
 
@@ -93,21 +97,29 @@ $ bundle install --path vendor/bundle
 # 必須項目 基本設定
 
 ## mysqlユーザー名
-export MYSQL_USERNAME=
+export MYSQL_USERNAME=root
 
 ## mysqlパスワード
 export MYSQL_PASSWORD=
 
 ## mysqlのホスト(127.0.0.1 や localhost)
-export MYSQL_HOST=
+export MYSQL_HOST=localhost
 
 ## webのポート番号(http://localhost:2000)
+## 2000じゃないとTwitterAuthにてコールバックできません
+## 2000以外を使いたい人は言ってください。追加します。
 export WEB_PORT=2000
 
 ## ファイルアップにAWSを利用するか(true/false)
+## falseの場合はローカルに保存されます
+## trueの場合は AWS 設定(任意) を入力してください
 export FOG_USE=false
 
-# AWS settings
+## twitter認証系
+export TWITTER_API_KEY=
+export TWITTER_SECRET_KEY=
+
+# AWS 設定(任意)
 export FOG_PROVIDER=
 export FOG_ACCESS_KEY=
 export FOG_SECRET_ACCESS_KEY=
@@ -119,16 +131,30 @@ export FOG_S3_URL=https://s3....
 ### db設定
 
 ```
-$ bundle exec rake db:create db:migrate
+$ ./dev-tools/reset-database.sh
+
+もしくは
+
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
+$ bundle exec rake db:create RAILS_ENV=test
+$ bundle exec rake db:migrate RAILS_ENV=test
+$ bundle exec rake db:seed:category RAILS_ENV=test
+
 ```
 
 ### サーバーを立てる
 
 ```
+$ ./dev-tools/start-rails-server.sh
+
+もしくは
+
 $ bundle exec rails s -b 0.0.0.0 -p $WEB_PORT
 ```
 
-http://localhost:{port番号}
+http://127.0.0.1:{port番号}
 
 ## Heroku App先
 
