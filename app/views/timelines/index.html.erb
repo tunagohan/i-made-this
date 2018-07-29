@@ -11,7 +11,7 @@
 
 <div class="container">
   <div id="items">
-    <%= render :partial => "items" %>
+    <%= render :partial => "items", locals: { items: @items } %>
   </div>
   <%= paginate @items %>
 </div>
