@@ -28,6 +28,6 @@ sample = [
     url:            'http://i-made-this.app',
     image:          "/thumbnails/#{rand(1..6)}.jpg",
     good_count:     rand(20),
-    delete_flag:    "rand(1)"
+    delete_flag:    0
   )
 end
