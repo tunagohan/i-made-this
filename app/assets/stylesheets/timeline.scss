@@ -16,9 +16,9 @@
 }
 
 .imt-pickup_item {
-  position: relative;
+  
   &Header {
-    
+    position: relative;
   }
   &_titleText {
       display: flex;
@@ -49,7 +49,7 @@
 
 .imt-iconImage {
   position: absolute;
-  bottom: 23%;
+  bottom: 45%;
   // left: 23.3%;
 }
 
