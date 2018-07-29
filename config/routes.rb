@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   # development時にのみ有効のメール認証
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    get "guideline", to: "guideline/style_guide#index"
   end
 end
