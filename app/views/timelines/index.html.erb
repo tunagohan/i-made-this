@@ -1,11 +1,17 @@
-<div class="container">
-  <header class="header">
-    <h1>Vertical Timeline</h1>
-  </header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ブランド</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="Navber">
+    <%= image_tag @user.image.to_s, class: 'btn-circle' %>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="container">
   <div id="items">
     <%= render :partial => "items" %>
   </div>
   <%= paginate @items %>
-
 </div>
