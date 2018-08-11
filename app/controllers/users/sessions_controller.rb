@@ -29,12 +29,14 @@ class Users::SessionsController < Devise::SessionsController
   #
   def login_require_params
     devise_parameter_sanitizer
-      .permit(:sign_up,
-              keys: [
-                :email,
-                :password,
-                :remember_me
-              ]
+      .permit(
+        :sign_up,
+        keys:
+          [
+            :email,
+            :password,
+            :remember_me
+          ]
       )
   end
 end

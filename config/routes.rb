@@ -18,19 +18,21 @@ Rails.application.routes.draw do
     # # ログイン
     # get "login", to: "users/sessions#new"
     # post "login", to: "users/sessions#create"
-    # ログアウト
-    get "logout", to: "users/sessions#destroy"
     # # 登録
     # get "sign_up", to: "users/sessions#new"
     # post "sign_up", to: "users/sessions#create"
 
+    # ログアウト
+    get "logout", to: "users/sessions#destroy"
+    # Twitter セッション
     get "/auth/twitter/callback", to: "users/sessions#create"
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # development時にのみ有効のメール認証
+  # development時にのみ有効
   if Rails.env.development?
+    # メール認証
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    # デザインガイドライン
     get "guideline", to: "guideline/style_guide#index"
   end
 end
