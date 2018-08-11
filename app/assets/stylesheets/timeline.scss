@@ -4,17 +4,6 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
-.btn-circle {
-  border-radius: 50%;
-  height: 128px;
-  width: 128px;
-  border: 2px solid #4d4d4d4d;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #fff;
-}
-
 .imt-pickup_item {
   
   &Header {
@@ -46,18 +35,11 @@
 //   list-style: none;
 // }
 
-
-.imt-iconImage {
-  position: absolute;
-  top: 80%;
-  // left: 23.3%;
-}
-
 .imt-tileItem_titleText {
-  padding-left: 120px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  font-weight: bold;
 }
 
 .day {
@@ -82,4 +64,15 @@ utility
   max-width: 640px;
   width: 80%;
   margin: 0 auto;
+}
+
+
+//bootstrap_dev(あとで切り出す)
+.rounded-circle {
+  height: 128px;
+  width: 128px;
+  border: 2px solid #4d4d4d4d;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
 }
