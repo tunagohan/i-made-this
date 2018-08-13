@@ -51,10 +51,10 @@
 
 // TWITTER HEART
 .heart {
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 65px;
   background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
-  background-position: 0 0;
+  background-position: -18px -18px;
   cursor: pointer;
   transition: background-position 1s steps(28);
   transition-duration: 0s;
@@ -73,7 +73,7 @@
     text-align: center;
     color: #8f8f8f8f;
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
     right: 0;
     left: 0;
     margin-top: 10px;
@@ -81,7 +81,7 @@
   
   &.is-active {
     transition-duration: 1s;
-    background-position: -2800px 0;
+    background-position: -2818px -18px;
   }
 }
 
