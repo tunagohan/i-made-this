@@ -14,11 +14,6 @@
       justify-content: space-between;
       align-items: flex-end;
   }
-  &Body {
-    &_content {
-
-    }
-  }
 }
 
 .l-tile {
@@ -26,25 +21,62 @@
   justify-content: center;
 }
 
-// .c-list_flex {
-//   display: flex;
-//   align-items: center;
-// }
+.listText {
 
-// .c-list_noDot {
-//   list-style: none;
-// }
-
-.imt-tileItem_titleText {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+&_title {
+  font-size: 18px;
 }
 
-.day {
+&_date {
   color: #dddddd;
   font-size: 12px;
-  padding-left: 30px;
+  }
+}
+
+.item-card-img {
+  position: relative;
+}
+
+.card-header {
+  position: relative;
+}
+
+// TWITTER HEART
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+  position: relative;
+  &-container {
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+  }
+
+  &-count {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
+  }
+  
+  &.is-active {
+    transition-duration: 1s;
+    background-position: -2800px 0;
+  }
+}
+
+.item-card-body {
+  display: flex;
 }
 
 /*=======================
@@ -58,13 +90,6 @@ utility
 .u-mt-24 {
   margin-top: 24px;
 }
-
-.l-tile-1col {
-  max-width: 640px;
-  width: 80%;
-  margin: 0 auto;
-}
-
 
 //bootstrap_dev(あとで切り出す)
 .rounded-circle {
