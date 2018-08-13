@@ -61,15 +61,17 @@
   position: relative;
   &-container {
     position: absolute;
-    bottom: 0;
-    right: -20px;
+    bottom: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50px;
   }
 
   &-count {
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    color: #fff;
+    color: #8f8f8f8f;
     position: absolute;
     bottom: 0;
     right: 0;
