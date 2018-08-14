@@ -8,3 +8,27 @@
 .mt10 {
   margin-top: 10px;
 }
+
+
+/*-------------------
+フォントサイズ
+
+10px~100pxまでのフォントサイズを指定
+--------------------*/
+// .u-fz {
+//   @for $fontSize from 10 to 101 {
+//     &-#{$fontSize} {
+//       @include imp(font-size,#{$fontSize}px);
+//       &-md {
+//         @include bp(medium) {
+//           @include imp(font-size,#{$fontSize}px);
+//         }
+//       }
+//       &-sm {
+//         @include bp(small) {
+//           @include imp(font-size,#{$fontSize}px);
+//         }
+//       }
+//     }
+//   }
+// }

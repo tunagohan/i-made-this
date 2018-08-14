@@ -1,17 +1,135 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ブランド</a>
-  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="Navber">
-    <%= image_tag @user.image.to_s, class: 'btn-circle' %>
-  </div><!-- /.navbar-collapse -->
-</nav>
-
 <div class="container">
-  <div id="items">
-    <%= render :partial => "items", locals: { items: @items } %>
-  </div>
-  <%= paginate @items %>
+<div class="row">
+<div class="col-md-12 text-center">
+<h1 class="h1">Timeline</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+<div class="col-lg-4 col-sm-12 item-card mt-5">
+<a href="#" class="card-link">
+<div class="card mt-3 item-card-inner">
+<div class="card-img item-card-img">
+<img class="card-img-top" src="https://picsum.photos/500/500" alt="Card image cap">
+</div>
+<div class="heart-container">
+<div class="heart">
+<p class="heart-count">999</p>
+</div>
+</div>
+</div>
+<div class="card-body p-0 item-card-body mt-3">
+<div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+<ul class="listText list-unstyled pl-2">
+<li class="listText_date">日付テキスト</li>
+<li class="listText_title">作品タイトル</li>
+</ul>
+</div>
+</a>
+</div>
+</div>
 </div>
