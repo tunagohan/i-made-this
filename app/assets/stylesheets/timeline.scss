@@ -60,7 +60,7 @@
   transition: background-position 1s steps(28);
   transition-duration: 0s;
   position: relative;
-  &_container {
+  &-container {
     position: absolute;
     bottom: 10px;
     right: 10px;
