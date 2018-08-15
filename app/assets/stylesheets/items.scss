@@ -41,10 +41,24 @@
   display: flex;
 }
 
+.imt-text:first-child {
+  margin-top: 0;
+}
+
 .imt-text {
   line-height: 1.8;
   font-size: 16px;
   margin-top: 24px;
+}
+
+.imt-list {
+  &-userInfo {
+    display: flex;
+    align-items: center;
+  }
+  &-userName {
+    padding-left: 10px;
+  }
 }
 
 .imt-comment {
