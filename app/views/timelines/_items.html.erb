@@ -1,20 +1,28 @@
 <% items.each do |item| %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">タイトル</th>
-        <th scope="col">詳細</th>
-        <th scope="col">画像</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row"><%= item.id %></th>
-        <td><%= item.title %></td>
-        <td><%= item.description %></td>
-        <td><%= image_tag item.image.url unless item.image.url.nil? %></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="col-lg-4 col-sm-12 item-card mt-5">
+    <div class="card mt-3 item-card-inner">
+      <div class="card-img item-card-img">
+        <%# イメージが存在しているかどうか %>
+        <% if item.image.url.nil? %>
+          <%= image_tag 'https://picsum.photos/500/500', class: "card-img-top" %>
+        <% else %>
+          <%= image_tag item.image.url, class: "card-img-top" %>
+        <% end %>
+      </div>
+      <div class="heart-container">
+        <div class="heart">
+          <p class="heart-count">999</p>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="card-link">
+      <div class="card-body p-0 item-card-body mt-3">
+        <div class="imt-iconImage"><%= image_tag @user.image.to_s, class: 'btn-circle icon-circle' %></div>
+        <ul class="listText list-unstyled pl-2">
+          <li class="listText_date"><%= item.created_at %></li>
+          <li class="listText_title"><%= item.title %></li>
+        </ul>
+      </div>
+    </a>
+  </div>
 <% end %>
