@@ -14,3 +14,65 @@
     }
   }
 }
+
+.imt-item_container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.imt-item_image {
+  display: inline-block;
+  width: 100%;
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.imt-content {
+  &_title {
+    font-size: 1.8rem;
+  }
+}
+
+.imt-list_flex {
+  display: flex;
+}
+
+.imt-text:first-child {
+  margin-top: 0;
+}
+
+.imt-text {
+  line-height: 1.8;
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+.imt-list {
+  &-userInfo {
+    display: flex;
+    align-items: center;
+  }
+  &-userName {
+    padding-left: 10px;
+  }
+}
+
+.imt-comment {
+  &_inner {
+    margin-top: 24px;
+  }
+  &_text {
+    padding-left: 10px;
+  }
+}
+
+.btn-comment {
+  display: block;
+  background: #f05f40;
+  color: #fff;
+  width: 100%;
+}
